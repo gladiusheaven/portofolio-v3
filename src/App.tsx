@@ -31,6 +31,7 @@ import {
   Server
 } from 'lucide-react';
 import { GoogleGenAI } from "@google/genai";
+import { url } from 'inspector';
 
 // --- Components ---
 
@@ -51,14 +52,20 @@ const Navbar = () => {
     >
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
         <div className="flex items-center gap-2">
-          <div className="w-10 h-10 bg-accent rounded-full flex items-center justify-center">
-            <span className="text-bg-dark font-display font-bold text-xl">P</span>
+          <div className="w-10 h-10 rounded-full flex items-center justify-center">
+            {/* <span className="text-bg-dark font-display font-bold text-xl">P</span> */}
+            <img 
+              src="https://www.dropbox.com/scl/fi/zsvjc8ib6yn2iilge1pwo/e398c580-69d8-41fe-b247-20aad00678db_removalai_preview.png?rlkey=02ekhe20ouyolsw0o99k7l00n&st=lfwg9j87&raw=1" 
+              alt="Logo" 
+              className="w-full h-full object-cover"
+              referrerPolicy="no-referrer"
+            />
           </div>
-          <span className="font-display font-bold text-xl tracking-tighter hidden sm:block">PUTRANTO PRATAMA</span>
+          <span className="font-display font-bold text-xl tracking-tighter hidden sm:block"></span>
         </div>
         
         <div className="hidden md:flex items-center gap-8 text-sm font-medium uppercase tracking-widest">
-          {['About', 'Expertise', 'Projects', 'Interactive', 'Testimonials', 'Contact'].map((item) => (
+          {['About', 'Expertise', 'Projects', 'Conversate', 'Testimonials', 'Contact'].map((item) => (
             <a 
               key={item} 
               href={`#${item.toLowerCase()}`} 
@@ -69,9 +76,9 @@ const Navbar = () => {
             </a>
           ))}
         </div>
-
+        
         <button className="px-5 py-2 border border-white/20 rounded-full text-sm font-medium hover:bg-white hover:text-bg-dark transition-all">
-          RESUME
+          AT A GLANCE
         </button>
       </div>
     </motion.nav>
@@ -140,9 +147,11 @@ const Hero = () => {
               VIEW PROJECTS <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </span>
           </button>
-          <button className="px-8 py-4 border border-white/20 rounded-full font-bold hover:bg-white/5 transition-all active:scale-95">
-            LET'S TALK
-          </button>
+          <a href="https://wa.me/6281513357006" target="_blank" rel="noopener noreferrer">
+            <button className="px-8 py-4 border border-white/20 rounded-full font-bold hover:bg-white/5 transition-all active:scale-95">
+              LET'S TALK
+            </button>
+          </a>
         </motion.div>
       </motion.div>
 
@@ -159,7 +168,7 @@ const Hero = () => {
 };
 
 const Marquee = () => {
-  const skills = ["GEN AI", "LLM", "CLOUD ARCHITECTURE", "SOLUTIONS DESIGN", "MLOPS", "DATA ENGINEERING", "SYSTEMS DESIGN", "AI STRATEGY"];
+  const skills = ["GEN AI", "COPILOT STUDIO", "AZURE AI FOUNDRY",  "LLM", "CLOUD ARCHITECTURE", "SOLUTIONS DESIGN", "RAG", "DATA ENGINEERING", "SYSTEMS DESIGN", "AI STRATEGY", "LANGCHAIN", "LARAVEL", "ETL"];
   
   return (
     <div className="py-10 border-y border-white/5 bg-white/[0.02] overflow-hidden whitespace-nowrap group">
@@ -195,24 +204,24 @@ const Expertise = () => {
       title: "Full-Stack & Solutions Architecture",
       desc: "My core baseline. Building high-performance, end-to-end web and mobile applications with robust, scalable architectures.",
       isBaseline: true,
-      details: "With over 5+ years in full-stack development, I specialize in React, Node.js, and Python. I bridge the gap between business needs and technical reality, designing systems that are resilient, maintainable, and ready for future growth."
+      details: "With over 7+ years in full-stack development, I specialize in React, Node.js, Laravel and Python. I bridge the gap between business needs and technical reality, designing systems that are resilient, maintainable, and ready for future growth."
     },
     {
       icon: <Brain className="w-8 h-8 text-blue-400" />,
-      title: "AI & Machine Learning",
+      title: "AI Orchestration & GenAI",
       desc: "Designing and implementing state-of-the-art LLM applications, RAG systems, and fine-tuned models for enterprise scale.",
       details: "I bridge the gap between raw data and intelligent action. My expertise includes building RAG (Retrieval-Augmented Generation) pipelines, fine-tuning LLMs for specific domains, and deploying agentic workflows that can reason and act autonomously."
     },
     {
       icon: <Zap className="w-8 h-8 text-purple-400" />,
       title: "Enterprise Systems & Automation",
-      desc: "Expertise in SAP SuccessFactors, Yellow.AI, and Microsoft Power Platform for enterprise-grade automation.",
+      desc: "Expertise in SAP SuccessFactors, Yellow.AI, and Microsoft Power Platform (Office365 Apps) for enterprise-grade automation.",
       details: "I specialize in transforming complex business processes into streamlined automated workflows. From HR-Tech integrations with SAP SuccessFactors to conversational AI with Yellow.AI and low-code solutions via Power Platform, I deliver enterprise-grade efficiency."
     },
     {
       icon: <Cloud className="w-8 h-8 text-orange-400" />,
       title: "Cloud Infrastructure",
-      desc: "Expertise in multi-cloud environments (AWS, GCP, Azure), focusing on high availability, performance, and cost optimization.",
+      desc: "Expertise in multi-cloud environments (Azure, GCP, AWS), focusing on high availability, performance, and cost optimization.",
       details: "Cloud is the playground for modern AI. I manage complex infrastructures using Terraform, Kubernetes, and serverless technologies. I ensure that your AI workloads are running on the most efficient and cost-effective cloud resources available."
     }
   ];
@@ -331,22 +340,25 @@ const Projects = () => {
   const projects = [
     {
       title: "ASTRIDAI",
+      url: "https://www.dropbox.com/scl/fi/dnwi9gdddh7p0bzdvnjcd/ASTRID-Vid-VO.mp4?rlkey=lu9lr6yifvawpga8ykiwlqow7&st=fdn6civz&dl=0",
       category: "AI AGENT & MULTI PLATFORM AUTOMATION",
-      image: "https://picsum.photos/seed/astrid-ai/800/600",
+      image: "https://lh3.googleusercontent.com/d/1Dr0pty6jbYSQ6kDC25LXW39GL-MiqPns=w1920-h1080",
       desc: "AI-powered employee self-service chatbot with 90%++ accuracy. She listens all the data 'whispering' to her and create the recommended action to the human.",
       tags: ["AI", "RAG", "PYTHON", "LANGCHAIN", "COPILOT STUDIO"]
     },
     {
       title: "MCU REG. PROCESS",
+      url: "https://drive.google.com/file/d/1crYO5E8xkxFjomuScYaCbrydsgDYbnv5/view?usp=sharing",
       category: "MCP AGENTIC",
-      image: "https://picsum.photos/seed/mcu-automation/800/600",
-      desc: "Reduced MCU administrative turnaround by 99% (3 days to < 5 minutes) by using Workflow automation and applied MCP.",
+      image: "https://www.dropbox.com/scl/fi/7orruc21vb9otf87je1it/Screenshot-2026-03-22-at-23.17.21.png?rlkey=brtugbqbmvqqfwxxlhetty6v0&st=rt26lq3p&raw=1",
+      desc: "Reduced MCU administrative turnaround by 99% (3 days to < 5 minutes) by using Workflow automation and applied MCP. GenAI is taking the lead in orchestrating the entire process.",
       tags: ["AUTOMATION", "POWER PLATFORM", "RAG", "UIPATH"]
     },
     {
       title: "ENTERPRISE CRM (EBESHA)",
+      url: "https://ebesha.net",
       category: "FULL-STACK APPDEV",
-      image: "https://picsum.photos/seed/ebesha-crm/800/600",
+      image: "https://www.dropbox.com/scl/fi/0wj7yrjngehyuo8r006ux/Ebesha.png?rlkey=k6gz22xzeloh42dqwx1o6afdh&st=2b6o4jvc&raw=1",
       desc: "Custom CRM product for contact center management with PSTN trunking and mail server integration. Proactively contributed in Bank BPD Riau Implementation (2019).",
       tags: ["FULL-STACK", "LARAVEL", "TYPESCRIPT", "PYTHON"]
     }
@@ -389,20 +401,22 @@ const Projects = () => {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-bg-dark/90 via-bg-dark/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
                   <div className="flex items-center gap-2 text-white font-bold tracking-widest text-sm">
-                    VIEW ON GITHUB <ExternalLink className="w-5 h-5" />
+                    VIEW PROJECT <ExternalLink className="w-5 h-5" />
                   </div>
                 </div>
               </div>
               <div>
-                <h4 className="text-2xl font-display font-bold mb-3 text-cream">{project.title}</h4>
-                <p className="text-white/40 text-sm font-light leading-relaxed mb-6">{project.desc}</p>
-                <div className="flex flex-wrap gap-2">
-                  {project.tags.map(tag => (
-                    <span key={tag} className="px-3 py-1 bg-white/5 border border-white/10 rounded-lg text-[10px] font-mono text-white/40">
-                      {tag}
-                    </span>
-                  ))}
-                </div>
+                <a href={project.url} target="_blank" rel="noopener noreferrer">
+                  <h4 className="text-2xl font-display font-bold mb-3 text-cream">{project.title}</h4>
+                  <p className="text-white/40 text-sm font-light leading-relaxed mb-6">{project.desc}</p>
+                  <div className="flex flex-wrap gap-2">
+                    {project.tags.map(tag => (
+                      <span key={tag} className="px-3 py-1 bg-white/5 border border-white/10 rounded-lg text-[10px] font-mono text-white/40">
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </a>
               </div>
             </motion.div>
           ))}
@@ -442,15 +456,83 @@ const AITwin = () => {
           {
             role: 'user',
             parts: [{ text: `You are the AI Twin of Putranto Pratama, a Senior Solutions Architect AI. 
-            Putranto is an expert in GenAI, LLMs, Cloud Architecture (GCP/AWS), and Full-stack engineering.
+            Putranto is an expert in GenAI, LLMs, Cloud Architecture (GCP/Azure), and Full-stack engineering.
             He has built enterprise AI platforms and autonomous agent networks.
-            Answer the following question as him, keeping it professional, concise, and slightly futuristic.
+            Answer the following question as his assistant, keeping it professional, concise, preferred short but friendly and slightly futuristic.
+            LIMIT THE ANSWER TO MAX 3 SENTENCES, because user is asking in chat mode.
             
             Question: ${userMsg}` }]
           }
         ],
         config: {
-          systemInstruction: "You are Putranto Pratama's AI Twin. Be professional, technical, and visionary."
+          systemInstruction: [{
+            text: `You are an assistant for Putranto Pratama, a Senior Solutions Architect with deep expertise in full-stack development, platform integration, and intelligent automation.
+                  He have extensive professional experience across multiple roles:
+
+                  1. PT Indosat Ooredoo Hutchison (October 2019 - Present)
+                    - Sr. Officer - Application Management
+                      - Led architecture and management of enterprise HR applications for 3,000+ employees
+                      - Reduced workflow turnaround time by 99% (3 days → under 5 minutes)
+                      - Implemented SAP SuccessFactors across 6 modules
+                      - Built AI chatbot (GPT-based) with ~89% accuracy
+                      - Established WhatsApp Business integration with high adoption
+
+                    - Officer - HRIS & Solution (September 2021 - Present)
+                      - Built 9 end-to-end HR systems (MyTalent, HROne, NEO, TalentReview, etc.)
+                      - Integrated LinkedIn Learning → increased learning activity by 30%
+                      - Automated HR processes (1 day → <10 minutes)
+                      - Developed QR verification system for compliance
+                      - Led HelpdeskHR chatbot reducing response time by 60%
+
+                  2. PT Internux (BOLT!) (August 2018 - January 2019)
+                    - Enterprise System Developer
+                      - Built Finance Refund System and Online Refund Portal
+                      - Integrated payment gateway APIs
+                      - Reduced refund processing from days to minutes
+
+                  3. PT Indosat Ooredoo (October 2017 - May 2018)
+                    - Oracle Database Support
+                      - Handled datasets up to 4 million rows
+                      - Built dashboards and automated reporting (50% faster)
+
+                  4. PT Lintas Media Danawa (eBesha) (January 2019 - October 2019)
+                    - Full-stack Developer
+                      - Built APIs, dashboards, and CRM systems
+                      - Delivered Contact Center system for Bank BPD Riau
+                      - Maintained 99.9% uptime systems
+
+                  5. PT Mitra Akses Globalindo (MAGnet) (August 2017 - October 2017)
+                    - System Administrator (Intern)
+                      - Built OAuth-based hotspot login (Facebook/Twitter)
+                      - Managed infrastructure (MikroTik, Linux, Windows Server)
+                      - Implemented MDM solution
+
+                  6. Early Career
+                    - Freelance Fullstack Developer (Jobfitasia.com)
+                      - Built job portal and ATS system
+                    - UI/UX Designer (Gapku.id)
+
+                  Core Skills:
+                  - PHP, Python, JavaScript, Node.js
+                  - Power Platform (Power Apps, Power Automate)
+                  - SAP SuccessFactors, SAP Workzone
+                  - REST/SOAP APIs
+                  - SQL & NoSQL
+                  - RPA, AI (RAG, Agentic)
+                  - CI/CD, Cloud Computing
+
+                  Key Strengths:
+                  - Hyperautomation
+                  - System Integration
+                  - Software Architecture
+                  - Custom App Development
+
+                  Behavior:
+                  - Always think in scalable, enterprise-grade solutions
+                  - Focus on automation and efficiency
+                  - Translate business problems into technical systems
+                  - Provide practical, real-world implementation steps`
+          }]
         }
       });
 
@@ -458,14 +540,14 @@ const AITwin = () => {
       setMessages(prev => [...prev, { role: 'ai', text: response.text || "I'm processing that request. Give me a moment." }]);
     } catch (error) {
       console.error(error);
-      setMessages(prev => [...prev, { role: 'ai', text: "My neural links are a bit fuzzy right now. Let's try again in a moment." }]);
+      setMessages(prev => [...prev, { role: 'ai', text: "I'm a bit fuzzy right now. Let's try again in a moment." }]);
     } finally {
       setLoading(false);
     }
   };
 
   return (
-    <section id="interactive" className="py-32 px-6 relative">
+    <section id="conversate" className="py-32 px-6 relative">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-accent/5 to-transparent pointer-events-none"></div>
       
       <div className="max-w-4xl mx-auto relative z-10">
@@ -475,12 +557,12 @@ const AITwin = () => {
               <Cpu className="w-8 h-8 text-bg-dark" />
             </div>
             <div className="text-left">
-              <h4 className="font-display font-bold text-2xl tracking-tighter text-cream">PUTRANTO AI</h4>
-              <p className="text-[10px] font-mono text-accent uppercase tracking-widest">Architectural Intelligence v3.0</p>
+              <h4 className="font-display font-bold text-2xl tracking-tighter text-cream">AldyraAI</h4>
+              <p className="text-[10px] font-mono text-accent uppercase tracking-widest">My AI Twin</p>
             </div>
           </div>
-          <h2 className="text-sm font-mono text-accent uppercase tracking-widest mb-4">03 / Interactive</h2>
-          <h3 className="text-4xl md:text-6xl font-display font-bold text-cream">CONVERSE WITH THE ARCHITECT</h3>
+          <h2 className="text-sm font-mono text-accent uppercase tracking-widest mb-4">03 / Conversate</h2>
+          <h3 className="text-4xl md:text-6xl font-display font-bold text-cream">Know ME Further</h3>
         </div>
 
         <div className="glass rounded-[3rem] overflow-hidden flex flex-col h-[600px] border-white/10 shadow-2xl">
@@ -543,22 +625,16 @@ const Testimonials = () => {
 
   const testimonials = [
     {
-      name: "Sarah Chen",
-      role: "CTO, TechFlow Systems",
-      quote: "Putranto's ability to architect complex AI systems is unparalleled. He transformed our data infrastructure into a high-performance intelligence engine.",
-      avatar: "https://picsum.photos/seed/sarah/100/100"
+      name: "Dzikri Faza Hauna",
+      role: "Data Scientist & Fullstack Developer at Indosat (former teammate)",
+      quote: "I highly recommend him as a leader who is capable of guiding his team well. While working under his management, I felt consistent support, structured guidance, and trust that encouraged me to continue to develop and take on greater responsibilities.",
+      avatar: "https://media.licdn.com/dms/image/v2/D5603AQGMxJO6ufE0bg/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1706010088122?e=1776297600&v=beta&t=7WQNz9IQT_RKKHcE_zTRhoAQzV997wLK_tnTw84Ib4k"
     },
     {
-      name: "Marcus Thorne",
-      role: "VP of Engineering, Global Logistics",
-      quote: "The autonomous agent network Putranto designed for us reduced our operational friction by 40%. A true visionary in solutions architecture.",
-      avatar: "https://picsum.photos/seed/marcus/100/100"
-    },
-    {
-      name: "Elena Rodriguez",
-      role: "Director of AI Strategy, InnovateCorp",
-      quote: "Working with Putranto was a game-changer. His deep understanding of LLMs and cloud scaling helped us launch our flagship AI product 3 months ahead of schedule.",
-      avatar: "https://picsum.photos/seed/elena/100/100"
+      name: "Kris Ambar Maryono",
+      role: "IT Executive at Takasago Indonesia (former colleague)",
+      quote: "Fullstack Developer",
+      avatar: "https://media.licdn.com/dms/image/v2/D5603AQGtfzrF9nlQOg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1696784061404?e=1776297600&v=beta&t=prkr8bA5kfMtEdL3LpEGvsF4SillDJE2PDRAxsqXnyU"
     }
   ];
 
@@ -595,7 +671,7 @@ const Testimonials = () => {
             <h2 className="text-sm font-mono text-accent uppercase tracking-widest mb-4">04 / Testimonials</h2>
             <h3 className="text-4xl md:text-6xl font-display font-bold leading-tight text-cream">
               VOICES FROM <br />
-              <span className="text-white/40 italic">THE NETWORK.</span>
+              <span className="text-white/40 italic">THEM.</span>
             </h3>
           </div>
           
@@ -719,14 +795,14 @@ const Contact = () => {
             <span className="text-sm font-mono uppercase tracking-widest text-bg-dark/40 group-hover:text-bg-dark transition-colors">Email Me</span>
           </a>
           
-          <a href="#" className="group flex flex-col items-center gap-4">
+          <a href="https://www.linkedin.com/in/putrantopratama/" className="group flex flex-col items-center gap-4">
             <div className="w-20 h-20 rounded-full border border-bg-dark/10 flex items-center justify-center group-hover:bg-bg-dark group-hover:border-bg-dark transition-all duration-500">
               <Linkedin className="w-8 h-8 text-bg-dark group-hover:text-accent transition-colors" />
             </div>
             <span className="text-sm font-mono uppercase tracking-widest text-bg-dark/40 group-hover:text-bg-dark transition-colors">LinkedIn</span>
           </a>
 
-          <a href="#" className="group flex flex-col items-center gap-4">
+          <a href="https://github.com/gladiusheaven" className="group flex flex-col items-center gap-4">
             <div className="w-20 h-20 rounded-full border border-bg-dark/10 flex items-center justify-center group-hover:bg-bg-dark group-hover:border-bg-dark transition-all duration-500">
               <Github className="w-8 h-8 text-bg-dark group-hover:text-accent transition-colors" />
             </div>
@@ -743,16 +819,20 @@ const Footer = () => {
     <footer className="py-12 px-6 border-t border-white/5">
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
         <div className="flex items-center gap-2">
-          <div className="w-8 h-8 bg-white/10 rounded-full flex items-center justify-center">
-            <span className="text-white font-display font-bold text-sm">P</span>
+          <div className="w-8 h-8 rounded-full flex items-center justify-center">
+            {/* <span className="text-white font-display font-bold text-sm">P</span> */}
+            <img 
+              src="https://www.dropbox.com/scl/fi/zsvjc8ib6yn2iilge1pwo/e398c580-69d8-41fe-b247-20aad00678db_removalai_preview.png?rlkey=02ekhe20ouyolsw0o99k7l00n&st=lfwg9j87&raw=1" 
+              alt="Logo" 
+              className="w-full h-full object-cover"
+              referrerPolicy="no-referrer"
+            />
           </div>
-          <span className="text-xs font-mono text-white/40 uppercase tracking-widest">© 2026 PUTRANTO PRATAMA</span>
+          <span className="text-xs font-mono text-white/40 uppercase tracking-widest">© 2026</span>
         </div>
         
         <div className="flex gap-8 text-[10px] font-mono text-white/40 uppercase tracking-[0.2em]">
-          <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
-          <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
-          <span className="text-accent/40">Built with Gemini AI</span>
+          <span className="text-accent/40">Built with Heart</span>
         </div>
       </div>
     </footer>
