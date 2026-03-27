@@ -450,6 +450,7 @@ const AITwin = () => {
 
     try {
       const apiKey = import.meta.env.VITE_GEMINI_API_KEY
+      console.log('api key:', apiKey)
       const ai = new GoogleGenAI({ apiKey: apiKey || process.env.GEMINI_API_KEY || '' });
       const model = ai.models.generateContent({
         model: "gemini-3-flash-preview",
