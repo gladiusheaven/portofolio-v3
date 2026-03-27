@@ -77,9 +77,11 @@ const Navbar = () => {
           ))}
         </div>
         
-        <button className="px-5 py-2 border border-white/20 rounded-full text-sm font-medium hover:bg-white hover:text-bg-dark transition-all">
-          AT A GLANCE
-        </button>
+        <a href="https://www.dropbox.com/scl/fi/hdywiw4p0pwzwz9o414hs/CV_Putranto-Pratama_2026.pdf?rlkey=mvtyvkgq8unuomd60ua8x6zqh&st=t745jhsl&dl=0" target="_blank" rel="noopener noreferrer">
+          <button className="px-5 py-2 border border-white/20 rounded-full text-sm font-medium hover:bg-white hover:text-bg-dark transition-all">
+            Download CV
+          </button>
+        </a>
       </div>
     </motion.nav>
   );
@@ -857,7 +859,7 @@ export default function App() {
       <Footer />
       
       {/* Global Background Noise/Grain */}
-      <div className="fixed inset-0 pointer-events-none z-[9999] opacity-[0.03] bg-[url('https://grainy-gradients.vercel.app/noise.svg')]"></div>
+      <div className="fixed inset-0 pointer-events-none z-[9999] opacity-[0.03] bg-[url('https://i.sstatic.net/j1D66.png')]"></div>
     </div>
   );
 }
