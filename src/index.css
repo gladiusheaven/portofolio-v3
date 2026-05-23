@@ -1,14 +1,17 @@
 @import "tailwindcss";
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+/* Fonts are loaded via <link> in index.html (Inter, Space Grotesk, JetBrains Mono). */
 
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Space Grotesk", sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
 
-  --color-accent: #3B82F6; /* Modern calm blue */
-  --color-cream: #FDFCF0; /* Calm but bold cream white */
-  --color-bg-dark: #05070A; /* Slightly deeper blue-tinted dark */
+  --color-accent: #3B82F6;        /* modern calm blue */
+  --color-accent-soft: #93C5FD;   /* blue-300, for gradients */
+  --color-clay: #60A5FA;          /* blue-400, secondary accent */
+  --color-cream: #FDFCF0;         /* calm bold cream white */
+  --color-muted: #6B7280;         /* muted gray — secondary text */
+  --color-bg-dark: #05070A;       /* deep blue-tinted dark */
   --color-card-bg: #0D1117;
   --color-border: rgba(255, 255, 255, 0.08);
 }
@@ -17,7 +20,7 @@
   body {
     @apply bg-bg-dark text-white font-sans antialiased;
   }
-  
+
   h1, h2, h3, h4, h5, h6 {
     @apply font-display tracking-tight;
   }
@@ -41,11 +44,32 @@
   background: rgba(255, 255, 255, 0.2);
 }
 
+/* Hide scrollbar on horizontal sliders */
+.scrollbar-hide {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
 /* Glass morphism */
 .glass {
   background: rgba(255, 255, 255, 0.03);
   backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Subtle dotted motif (used sparingly, e.g. behind the hero photo) */
+.batik-motif {
+  background-image:
+    radial-gradient(circle at 1px 1px, rgba(59, 130, 246, 0.16) 1px, transparent 0);
+  background-size: 22px 22px;
+}
+
+/* Faint film-grain texture, applied as a low-opacity global overlay */
+.bg-grain {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)'/%3E%3C/svg%3E");
 }
 
 /* Marquee animation */
