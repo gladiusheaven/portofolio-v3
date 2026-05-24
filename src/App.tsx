@@ -193,7 +193,7 @@ const Hero = () => {
       >
         {/* LEFT — identity + value */}
         <div className="order-2 lg:order-1">
-          <motion.div
+          {/* <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
@@ -204,7 +204,7 @@ const Hero = () => {
               <span className="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
             </span>
             Open to roles — Jakarta, ID · Malaysia · New Zealand · Australia · Remote
-          </motion.div>
+          </motion.div> */}
 
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -212,7 +212,7 @@ const Hero = () => {
             transition={{ duration: 0.7, delay: 0.1 }}
             className="text-sm font-mono text-muted uppercase tracking-[0.25em] mb-5"
           >
-            Putranto Pratama · Senior AI Solutions Engineer
+            Putranto Pratama · Senior AI Solutions and Software Engineer
           </motion.p>
 
           <div className="flex flex-wrap gap-2.5 mb-8">
@@ -504,7 +504,7 @@ const Experience = () => {
   org: "Indosat Ooredoo Hutchison",
   role: "Sr. Officer, Application Management · Officer, HRIS & Solution",
   points: [
-    "Architected ASTRID-AI — enterprise agentic HR platform (LangChain, LangGraph, RAG, A2A) integrated with Microsoft Teams & SAP SuccessFactors; reduced helpdesk volume by 60% and SLA from 30 min → 3 min across 3,000+ employees",
+    "Architected ASTRID-AI, enterprise agentic HR platform (LangChain, LangGraph, RAG, A2A, MCP) integrated with Microsoft Teams & SAP SuccessFactors; reduced helpdesk volume by 60% and SLA from 30 min → 3 min across 3,000+ employees",
     "Delivered measurable ROI: overtime cost cut 54% (CICO-validated in one quarter); medical check-up processing compressed from 3 days → 5 min",
     "Ranked #23 of ~3,000 employees in Indosat's 2025 AI Adoption Challenge (Ace Champions); awarded Top 10 High-Impact Architect in internal innovation competition",
     "Shipped 9 end-to-end HR products (MyTalent, HROne, NEO, TalentReview…) on Power Platform + Azure AI Foundry; currently scaling ASTRID-AI into Voice and Legal/Regulatory/Data Privacy domains",
@@ -516,7 +516,7 @@ const Experience = () => {
   org: "Lintas Media Danawa (eBesha)",
   role: "Full-stack Developer",
   points: [
-    "Delivered production Contact Center system for Bank BPD Riau — APIs, dashboards, and CRM modules from scratch to live",
+    "Delivered production Contact Center system for Bank BPD Riau, APIs, dashboards, and CRM modules from scratch to live. Transformed client requirements into technical solutions, ensuring seamless integration with existing infrastructure (PSTN trunking, mail servers).",
     "Maintained 99.9% uptime across all deployed systems",
     "Built full-stack web applications across fintech and enterprise clients",
   ],
@@ -526,7 +526,7 @@ const Experience = () => {
   org: "Internux (BOLT!)",
   role: "Enterprise System Developer",
   points: [
-    "Built Finance Refund System & public-facing Online Refund Portal used by BOLT! subscribers nationwide",
+    "Built Finance Refund System & public-facing Online Refund Portal used by BOLT! subscribers nationwide. When BOLT! ceased operations in 2023, the refund system I built was credited for enabling a smooth refund process for millions of customers, preserving brand trust during a challenging transition.",
     "Integrated payment gateway APIs; compressed refund processing cycle from days to minutes",
     "Delivered financial-grade systems under telco-scale compliance requirements",
   ],
@@ -534,7 +534,7 @@ const Experience = () => {
 {
   period: "2017 — 2018",
   org: "Indosat Ooredoo",
-  role: "Oracle Database Support",
+  role: "Oracle Database Support (Contract)",
   points: [
     "Managed and queried datasets up to 4 million rows on Oracle DB in a live telco environment",
     "Reduced reporting turnaround 50% by building automated dashboards for business stakeholders",
@@ -543,19 +543,19 @@ const Experience = () => {
 {
   period: "2017",
   org: "Mitra Akses Globalindo (MAGnet)",
-  role: "System Administrator (Intern)",
+  role: "System Administrator (Internship)",
   points: [
-    "Engineered OAuth-based hotspot login portal (Facebook / Twitter SSO) from zero",
-    "Administered MikroTik / Linux / Windows infrastructure; implemented Mobile Device Management (MDM)",
+    "Engineered OAuth-based hotspot login portal (Facebook / Twitter SSO) from scratch, make seamless user experience for 100+ daily users",
+    "Administered MikroTik / Linux / Windows infrastructure; implemented ZOHO Mobile Device Management (MDM)",
   ],
 },
 {
-  period: "Where it started",
+  period: "Where it all started",
   org: "Freelance · Jobfitasia.com & Gapku.id",
   role: "Fullstack Developer · UI/UX Designer",
   points: [
-    "Independently built a full job portal and Applicant Tracking System (ATS) for Jobfitasia.com — end-to-end, solo",
-    "Designed end-to-end UI/UX for Gapku.id; first exposure to HR-tech that would define the next 8 years of career focus",
+    "Independently built a full job portal and Applicant Tracking System (ATS) for Jobfitasia.com, end-to-end, from the scratch, including UI/UX, frontend, backend, and deployment. This project was my first real-world application of software development skills and sparked my passion for building impactful solutions.",
+    "Designed end-to-end UI/UX for Gapku.id and hosting provider clients; first exposure to HR-tech that would define the next 8 years of career focus",
   ],
 },
   ];
@@ -1193,7 +1193,7 @@ const Contact = () => {
         </motion.div>
 
         <div className="flex items-center justify-center gap-2 text-bg-dark/60 text-sm font-mono mb-12">
-          <MapPin className="w-4 h-4" /> Depok, Indonesia · open to Jakarta, Malaysia, New Zealand, Australia &amp; Remote
+          <MapPin className="w-4 h-4" /> Depok, Indonesia · open to Jakarta, Malaysia, New Zealand, Australia &amp; Remote Jobs
         </div>
 
         <div className="flex flex-col md:flex-row justify-center items-center gap-12">
