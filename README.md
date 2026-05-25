@@ -1,6 +1,6 @@
 # Putranto Pratama
 
-Senior AI Solutions Engineer | LangChain · RAG · Power Platform · Azure AI
+Senior AI Solutions & Software Engineer | LangChain · LangGraph · RAG · Power Platform · Azure AI
 
 ## About Me
 
